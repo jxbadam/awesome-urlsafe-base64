@@ -1,0 +1,23 @@
+{
+  "name": "urlsafe-base64",
+  "version": "0.0.1",
+  "description": "A very simple base64 encoder that produces URL safe base64 encodings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --opts test/config/mocha.opts test/unit"
+  },
+  "author": "Adam Carnine <adam@jxbdesign.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "0.21.0"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.2.5",
+    "mocha-junit-reporter": "^1.11.1",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0",
+    "coveralls": "^2.11.11"
+  }
+}

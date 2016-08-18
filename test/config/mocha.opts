@@ -1,0 +1,4 @@
+--ui bdd
+--growl
+--recursive
+--require test/common.js
