@@ -4,7 +4,7 @@
   "description": "A very simple base64 encoder that produces URL safe base64 encodings.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --opts test/config/mocha.opts test/unit"
+    "test": "istanbul cover ./node_modules/.bin/_mocha -- --opts test/config/mocha.opts test/unit"
   },
   "author": "Adam Carnine <adam@jxbdesign.com>",
   "license": "MIT",
@@ -19,5 +19,22 @@
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "coveralls": "^2.11.11"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxbadam/urlsafe-base64.git"
+  },
+  "keywords": [
+    "base64",
+    "url",
+    "encode",
+    "decode"
+  ],
+  "bugs": {
+    "url": "https://github.com/jxbadam/urlsafe-base64/issues"
+  },
+  "homepage": "https://github.com/jxbadam/urlsafe-base64#readme"
 }
