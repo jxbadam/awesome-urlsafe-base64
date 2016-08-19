@@ -43,6 +43,9 @@ var encodedString = AwesomeBase64.encode(buffer);
 ```
 
 ### .decodeString(string) :: string
+
+Decodes a string.
+
 ```javascript
 var AwesomeBase64 = require('awesome-urlsafe-base64');
 var toDecode = 'VWJlciBTdHJpbmcgdG8gRW5jb2Rl';
