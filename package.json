@@ -1,6 +1,6 @@
 {
   "name": "urlsafe-base64",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A very simple base64 encoder that produces URL safe base64 encodings.",
   "main": "index.js",
   "scripts": {
