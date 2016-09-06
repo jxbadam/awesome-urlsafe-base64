@@ -1,4 +1,3 @@
-const _ = require('ramda');
 const Base64 = require('../../index.js');
 
 const STRING_TO_ENCODE = "Uber String to Encode";
@@ -54,6 +53,21 @@ describe('index.js', function() {
           function() {
             var decodeError = function() {
               Base64.decodeString({});
+            };
+
+            expect(decodeError).to.throw(Error);
+          }
+        );
+
+      }
+    );
+
+    describe(':: decode', function() {
+
+        it('should throw an Error on invalid input',
+          function() {
+            var decodeError = function() {
+              Base64.decode({});
             };
 
             expect(decodeError).to.throw(Error);
