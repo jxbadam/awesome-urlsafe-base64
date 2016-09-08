@@ -1,13 +1,13 @@
-const R            = require ('ramda');
+var R            = require ('ramda');
 
-const Alphabet = require ('./lib/alphabet.js');
+var Alphabet = require ('./lib/alphabet.js');
 
-const AlphabetType = require ('./lib/alphabet-type.js');
+var AlphabetType = require ('./lib/alphabet-type.js');
 
-const VERSION = "1.1.0"
+var VERSION = "1.1.0"
 
 // encodeString :: String -> String
-const encodeString = function(item) {
+function encodeString(item) {
   if (!R.is(String, item)) {
     throw new Error('URL Safe Base64 will only operate on a String.');
   }
@@ -18,7 +18,7 @@ const encodeString = function(item) {
 };
 
 // encodeBuffer :: Buffer -> String
-const encodeBuffer = function(buffer) {
+function encodeBuffer(buffer) {
   if (!R.is(Buffer, buffer)) {
     throw new Error('encodeBuffer: expected Buffer.');
   }
@@ -33,7 +33,7 @@ const encodeBuffer = function(buffer) {
 }
 
 // decodeBuffer :: String -> Buffer
-const decodeBuffer = function(buffer) {
+function decodeBuffer(buffer) {
   if (!R.is(Buffer, buffer)) {
     throw new Error('decodeBuffer: expected Buffer.');
   }
@@ -48,7 +48,7 @@ const decodeBuffer = function(buffer) {
 }
 
 // decodeString :: String -> String
-const decodeString = function(item) {
+function decodeString(item) {
   if (!R.is(String, item)) {
     throw new Error('decodeString: expected String.');
   }
@@ -63,7 +63,7 @@ const decodeString = function(item) {
 }
 
 // decodeString :: String -> Buffer
-const decodeStringToBuffer = function(item) {
+function decodeStringToBuffer(item) {
   if (!R.is(String, item)) {
     throw new Error('decodeString: expected String.');
   }
@@ -76,7 +76,7 @@ const decodeStringToBuffer = function(item) {
 }
 
 // _internalDecode :: String -> String
-const _internalDecode = function(item) {
+function _internalDecode(item) {
 
   item = R.replace(/_/g, '/', item);
   item = R.replace(/-/g, '+', item);
@@ -85,11 +85,12 @@ const _internalDecode = function(item) {
   return item;
 }
 
-const validate = function(item) {
-  const alphabet = Alphabet.getAlphabet(AlphabetType.RFC_6920);
+function validate(item) {
+  var alphabet = Alphabet.getAlphabet(AlphabetType.RFC_6920);
+  var i, char;
 
-  for(let i = 0; i < item.length; i ++) {
-    let char = item.charAt(i);
+  for(i = 0; i < item.length; i ++) {
+    char = item.charAt(i);
 
     if (!alphabet.includes(char)) {
       return false;
